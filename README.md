@@ -173,7 +173,7 @@ hello
 
 ```
 
-Si nos vamos al rositorio de docker github debieramos ver la imagen jmmirand/demo-kaniko
+Si nos vamos al repositorio de docker github debieramos ver la imagen jmmirand/demo-kaniko
 
  * https://cloud.docker.com/repository/list
 
@@ -184,7 +184,8 @@ Si nos vamos al rositorio de docker github debieramos ver la imagen jmmirand/dem
 # Referencias
 
 ## Proyecto  kaniko
-
+  * https://github.com/GoogleContainerTools/kaniko
+  
 
 ## CREAR Secretos Kubectl para conectar al Registro
 
