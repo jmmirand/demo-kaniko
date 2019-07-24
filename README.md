@@ -28,10 +28,11 @@ Para el ejemplo utilizamos una cuenta creada en docker-hub
 
 ```
 kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/  --docker-username=jmmmirand --docker-password=xxxxxxxxx   --docker-email=jmmirand@gmail.com
+
 ```
 
 
- ## Crear los recursos kubernetes
+## Crear los recursos kubernetes
 
 ### Persistent Volume
 
@@ -40,6 +41,7 @@ Creamos un volumen persistente det tipo Local de 10Gigas que después lo utiliza
 Le indicaremos la ruta local del cluster. Es donde previamente hemos creado el dockerfile
 
 El estado en el que se queda es Available/Disponible
+
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -87,6 +89,7 @@ spec:
   storageClassName: local-storage
 
 ```
+
 Creado el pvc se ve que está enlazado al volumen docker file que tiene 10 Gigas de capacidad
 
 ```
@@ -172,6 +175,7 @@ hello
 ```
 
 Si nos vamos al rositorio de docker github debieramos ver la imagen jmmirand/demo-kaniko
+
  * https://cloud.docker.com/repository/list
 
 
