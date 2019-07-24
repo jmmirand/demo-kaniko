@@ -1,4 +1,4 @@
-## Hello World Kaniko
+# Hello World Kaniko
 
 Usando minikube se puede montar el ejemplo HelloWorld de Kaniko
 
@@ -7,7 +7,7 @@ Usando minikube se puede montar el ejemplo HelloWorld de Kaniko
 El ejemplo crea una imagen a partir de un dockerfile que está almacenado en un dicectorio local dentro del cluster.
 
 
-### Crear directorio dentro del cluster
+## Crear directorio dentro del cluster
 
 ```
 $ minikube ssh
@@ -22,7 +22,7 @@ $ pwd
 ```
  
 
-### Crear Secreto para conectar al registro
+## Crear Secreto para conectar al registro
 
 Para el ejemplo utilizamos una cuenta creada en docker-hub
 
@@ -31,10 +31,9 @@ kubectl create secret docker-registry regcred --docker-server=https://index.dock
 
 ```
 
+## Crear los recursos kubernetes
 
-### Crear los recursos kubernetes
-
-#### Persistent Volume
+### Persistent Volume
 
 Creamos un volumen persistente det tipo Local de 10Gigas que después lo utilizará el pod.
 
@@ -69,7 +68,7 @@ dockerfile   10Gi       RWO            Retain           Available           loca
 
 ```
 
-#### Persistent Volume CLAIM
+### Persistent Volume CLAIM
 
 Creamos un pvc a partir del volumen que acabamos de CREAR
 
@@ -102,7 +101,7 @@ dockerfile-claim   Bound    dockerfile   10Gi       RWO            local-storage
 
 ```
 
-#### Creamos ya el Pod que ejecutara la construcción de la imagen
+### Creamos el Pod que ejecutara la construcción de la imagen
 
 ```
 apiVersion: v1
@@ -137,7 +136,7 @@ spec:
 Aplicamos el pod y ya solo queda comprobar
 
 
-#### Comprobar que se ha creado correctamente
+### Comprobar que se ha creado correctamente
 
 ```
 kubectl logs kaniko
@@ -192,7 +191,6 @@ Si nos vamos al rositorio de docker github debieramos ver la imagen jmmirand/dem
  * [ Pull imágen del registro Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/)
  * [ Doc Secreto Kubernetes ](https://kubernetes.io/docs/concepts/configuration/secret/)
 
-
 ```
 kubectl create secret docker-registry regcred
   --docker-server=<your-registry-server>
@@ -200,10 +198,5 @@ kubectl create secret docker-registry regcred
   --docker-password=<your-pword>
   --docker-email=<your-email>
 ```
-
-
-
-
-
 
 El servidor por defecto es https://index.docker.io/v1/
