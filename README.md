@@ -1,4 +1,4 @@
-#Hello World Kaniko
+## Hello World Kaniko
 
 Usando minikube se puede montar el ejemplo HelloWorld de Kaniko
 
@@ -8,6 +8,7 @@ El ejemplo crea una imagen a partir de un dockerfile que está almacenado en un 
 
 
 ### Crear directorio dentro del cluster
+
 ```
 $ minikube ssh
 $ mkdir kaniko && cd kaniko
@@ -18,7 +19,8 @@ FROM ubuntu
 ENTRYPOINT ["/bin/bash", "-c", "echo hello"]
 $ pwd
 /home/docker/kaniko
-``` 
+```
+ 
 
 ### Crear Secreto para conectar al registro
 
@@ -28,7 +30,8 @@ Para el ejemplo utilizamos una cuenta creada en docker-hub
 kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/  --docker-username=jmmmirand --docker-password=xxxxxxxxx   --docker-email=jmmirand@gmail.com
 ```
 
-## Crear los recursos kubernetes
+
+ ## Crear los recursos kubernetes
 
 ### Persistent Volume
 
