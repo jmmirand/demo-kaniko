@@ -1,6 +1,10 @@
 # Hello World Kaniko
 
-Usando minikube se puede montar el ejemplo HelloWorld de Kaniko
+[Kaniko](https://github.com/GoogleContainerTools/kaniko) es una librería que nos permite construir imagenes Docker sin utilizar el demonio Docker
+
+Para demostrarlo vamos a construir una imágen "Hello World" usando Kubernetes.
+
+Queremos ver un uso práctico de la librería Kaniko, para ello crearemos un contenedor 
 
   * https://github.com/debuggy/kaniko-example
 
